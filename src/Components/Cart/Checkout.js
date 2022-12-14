@@ -74,7 +74,7 @@ const Checkout = (props) => {
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalCodeInputRef} />
         {!formInputsvalidity.postalCode && (
-          <p className="invalid">Please enter a valid postalCode!</p>
+          <p className="invalid">Please enter a valid FiveChars postalCode!</p>
         )}
       </div>
       <div className="control">
