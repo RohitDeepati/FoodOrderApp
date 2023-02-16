@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./Checkout.css";
 
 const isEmpty = (value) => value.trim() === "";
-const isFiveChars = (value) => value.trim().length === 5;
+const isSixChars = (value) => value.trim().length === 6;
 
 const Checkout = (props) => {
   const [formInputsvalidity, setFormInputsValidity] = useState({
@@ -28,7 +28,7 @@ const Checkout = (props) => {
     const enteredNameIsValid = !isEmpty(enteredName);
     const enteredStreetIsValid = !isEmpty(enteredStreet);
     const enteredCityIsValid = !isEmpty(enteredCity);
-    const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
+    const enteredPostalCodeIsValid = isSixChars(enteredPostalCode);
 
     setFormInputsValidity({
       name: enteredNameIsValid,
@@ -74,7 +74,7 @@ const Checkout = (props) => {
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalCodeInputRef} />
         {!formInputsvalidity.postalCode && (
-          <p className="invalid">Please enter a valid FiveChars postalCode!</p>
+          <p className="invalid">Please enter a valid Six Character postal Code!</p>
         )}
       </div>
       <div className="control">
